@@ -14,8 +14,8 @@
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
-  --normal-font-size: .938rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
   /*===== Margenes =====*/
   --mb-2: 1rem;
   --mb-4: 2rem;
@@ -30,12 +30,14 @@
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
     --normal-font-size: 1rem;
-    --smaller-font-size: .875rem;
+    --smaller-font-size: 0.875rem;
   }
 }
 
 /*===== BASE =====*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -50,7 +52,9 @@ body {
   color: var(--second-color);
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
 }
 
@@ -217,7 +221,7 @@ img {
   fill: var(--first-color);
 }
 .home__blob-img {
-  width: 360px;
+  width: 435px;
 }
 
 /*BUTTONS*/
@@ -483,4 +487,41 @@ img {
   .home__img {
     width: 450px;
   }
+}
+
+/*===== CLIENTS SECTION =====*/
+.clients__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.client__card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #4a6cf7;
+}
+
+.client__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.client__review {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
 }
