@@ -527,3 +527,17 @@ img {
     }
   }
 }
+.skills-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+
+.skills-column {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+}
