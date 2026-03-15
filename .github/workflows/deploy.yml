@@ -1,4 +1,4 @@
-name: Deploy HTML Site
+name: Deploy to AWS S3
 
 on:
   push:
@@ -15,8 +15,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          aws-access-key-id: ${{ secrets.AKIASC5F3RADCM47MX6C }}
+          aws-secret-access-key: ${{ secrets.qYvOrZb4ySx1CjX/4/cR29aJ3Y4Qiwo4HTJPni38 }}
+          aws-region: us-east-1
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./ s3://bojjanaresh-portfolio \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --delete
